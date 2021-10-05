@@ -1,0 +1,13 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://192.168.1.90:8080
+functions:
+  cg-data-shipper:
+    lang: quarkus-native
+    handler: ./cg-ir-cut-control
+    image: cgsergevas/cg-ir-cut-control:latest
+    annotations:
+      topic: "cg.growlabv1.LIGHT"
+    environment:
+      GROWLAB_V1_API_URL: http://192.168.1.72:8088/growlab/api/v1
