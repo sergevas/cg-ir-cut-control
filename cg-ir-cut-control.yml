@@ -3,8 +3,8 @@ provider:
   name: openfaas
   gateway: http://192.168.1.90:8080
 functions:
-  cg-data-shipper:
-    lang: quarkus-native
+  cg-ir-cut-control:
+    lang: dockerfile
     handler: ./cg-ir-cut-control
     image: cgsergevas/cg-ir-cut-control:latest
     annotations:
